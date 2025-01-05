@@ -113,6 +113,9 @@ It evaluates the **efficiency of an algorithm by counting the number of fundamen
     - Example:
         - Generating all permutations of \( n \) elements.
 
+
+![bigO chart](./img/bigo_chart_0.png)
+
 ---
 ### Relation Between Time Complexity and Big-O Notation
 
