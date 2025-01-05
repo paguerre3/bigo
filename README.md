@@ -210,10 +210,25 @@ It's important to note that fully automated determination of an algorithm's time
 - ***Note `n` is the input size and `O` is the Big-O notation, i.e. "this function has a 0 of n where n is the size of the input" in case of a Linear function***
 - **Product Rule: If the Big Q is the product of multiple terms then drop the constant terms**, e.g.:
    ```bash
-   O(4*n) = O(n) // linear
+   O(4*n)       = O(n) // linear
    
    O(5 * n * n) = O(n^2) // quadratic
    
-   O(765) = O(1) // constant
+   O(765)       = O(1) // constant
    ``` 
-- **Sum Rule:**
+- **Sum Rule: If the Big Q is the sum of multiple terms, only keep the largest term, drop the rest**, e.g.:
+   ```bash
+   O(n + 1000)            = O(n) // linear
+   
+   O(n^2 + n)             = O(n^2) // quadratic
+   
+   O(n + 500 + n^3 + n^2) = O(n^3) // cubic
+   ``` 
+- **Putting all together: To simplify fully, apply the Product Rule followed by the Sum Rule**, e.g.:
+   ```bash
+   O(5n2 + 100n + 17)     => O(n^2 + n + 1)       = O(n^2) // quadratic
+   
+   O((n/3)^6 + 10n)       => O(n^6 + n)           = O(n^6)
+   
+   O(n + 500 + n^3 + n^2) = O(n^3) // cubic
+   ``` 
