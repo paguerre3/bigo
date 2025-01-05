@@ -73,6 +73,7 @@ It evaluates the **efficiency of an algorithm by counting the number of fundamen
 
 3. **Linear Time \( O(n) \):**
     - **Execution time "grows linearly with input size".**
+    - ***Note `n` is the input size and `O` is the Big-O notation, i.e. "this function has a 0 of n where n is the size of the input"***
     - Example:
       ```java
       public int sumArray(int[] arr) {
@@ -125,7 +126,6 @@ It evaluates the **efficiency of an algorithm by counting the number of fundamen
     - A nested loop that runs \( 3n^2 + 2n + 5 \) operations has a time complexity of \( O(n^2) \) (dominant term).
 
 ---
-
 ### Tools for Analyzing Big-O and Time Complexity in Java
 
 1. **Manual Analysis in IntelliJ IDEA (Community Edition):**
@@ -184,8 +184,7 @@ public int[] bubbleSort(int[] arr) {
 With this approach, you can systematically evaluate the performance of Java code in terms of Big-O and time complexity.
 
 ---
-
-# Tools for Analyzing Big-O and Time Complexity in Deep
+#### Tools for Analyzing Big-O and Time Complexity in Deep
 
 Analyzing the time complexity and Big-O notation of existing Java code is a challenging task that often requires manual inspection and theoretical analysis. Automated tools for this purpose are limited due to the inherent difficulty in determining an algorithm's complexity programmatically. However, several approaches and tools can assist in this process:
 
@@ -199,4 +198,22 @@ Analyzing the time complexity and Big-O notation of existing Java code is a chal
 
 It's important to note that fully automated determination of an algorithm's time complexity is generally not feasible due to the undecidable nature of the problem, as discussed in various computer science literature. Therefore, combining these tools with manual analysis and a solid understanding of algorithmic principles is the most effective approach.
 
+---
+### Reference guide
+
 [BigO Guide and Time Complexity](https://youtu.be/HfIH3czXc-8)
+
+**BigO notation rules**
+
+- **Better solutions consumes less time (duration) and less memory (space) and BigQ & Time Complexity provide a better understanding of the algorithm for benchmarking.** 
+- **BigO notation** can objectively describe teh efficiency of code without using concrete units as it focus on the Time and Space requirements Scale (preparing for the worst case scenario so the solution is resilient).
+- ***Note `n` is the input size and `O` is the Big-O notation, i.e. "this function has a 0 of n where n is the size of the input" in case of a Linear function***
+- **Product Rule: If the Big Q is the product of multiple terms then drop the constant terms**, e.g.:
+   ```bash
+   O(4*n) = O(n) // linear
+   
+   O(5 * n * n) = O(n^2) // quadratic
+   
+   O(765) = O(1) // constant
+   ``` 
+- **Sum Rule:**
