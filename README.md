@@ -179,3 +179,20 @@ public int[] bubbleSort(int[] arr) {
     - Use the `System.nanoTime()` method or integrate JMH for accurate runtime analysis.
 
 With this approach, you can systematically evaluate the performance of Java code in terms of Big-O and time complexity.
+
+---
+# Tools kin Deep
+
+Analyzing the time complexity and Big-O notation of existing Java code is a challenging task that often requires manual inspection and theoretical analysis. Automated tools for this purpose are limited due to the inherent difficulty in determining an algorithm's complexity programmatically. However, several approaches and tools can assist in this process:
+
+1. **Manual Analysis**: Review your code to identify loops, recursive calls, and other constructs that influence time complexity. Understanding the algorithm's structure is crucial for determining its Big-O notation. Resources like GeeksforGeeks provide tutorials on Big-O analysis, which can be helpful.
+
+2. **Profiling Tools**: While profilers do not directly provide Big-O complexity, they can help identify performance bottlenecks by measuring execution time and resource usage. In Java, tools like VisualVM or JProfiler can be used to monitor the performance of your code. These tools offer insights into which parts of your code consume the most time, aiding in manual complexity analysis.
+
+3. **Empirical Analysis**: By running your code with various input sizes and measuring execution times, you can empirically determine how the runtime scales. Plotting input sizes against execution times may reveal patterns indicative of specific time complexities (e.g., linear, quadratic). This method requires careful experimentation and is not always conclusive.
+
+4. **Static Code Analysis Tools**: Some static analysis tools can detect code patterns that may lead to inefficient performance, such as nested loops or recursive calls. While they don't provide exact Big-O notations, they can highlight areas of concern. Tools like SonarQube offer static analysis capabilities for Java code.
+
+It's important to note that fully automated determination of an algorithm's time complexity is generally not feasible due to the undecidable nature of the problem, as discussed in various computer science literature. Therefore, combining these tools with manual analysis and a solid understanding of algorithmic principles is the most effective approach.
+
+[BigO Guide and Time Complexity](https://youtu.be/HfIH3czXc-8)
