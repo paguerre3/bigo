@@ -45,7 +45,7 @@
 
 **The classic N-Queens problem has a time complexity of \( O(n!) \) due to its exhaustive backtracking approach.**
 
-***Not it's possible to optimize the code to reduce unnecessary checks and improve performance but the overall time complexity 
+***Note that it's possible to optimize the code to reduce unnecessary checks and improve performance but the overall time complexity 
 remains factorial according to the Product Rule because of the nature of the problem.***
 
 Instead of checking all constraints manually in the `isSafe` function for every recursive call, it's possible to track which rows and diagonals are under attack using arrays or bitmasks, i.e.:
