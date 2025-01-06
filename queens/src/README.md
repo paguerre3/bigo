@@ -9,11 +9,10 @@
 2. **Calculate the time complexity (Big-O notation) of the code.**
 
   **2.1. Recursive Backtracking (`solve`)**
-
-- For each column, the algorithm attempts all possible rows.
-- The algorithm recursively places a queen in a valid position and backtracks if needed.
-- In the worst case, there are \( n! \) permutations to check for \( n \)-queens.
-- The **time complexity** is \( O(n!) \), where \( n \) is the number of queens.
+  - For each column, the algorithm attempts all possible rows.
+  - The algorithm recursively places a queen in a valid position and backtracks if needed.
+  - In the worst case, there are \( n! \) permutations to check for \( n \)-queens.
+  - The **time complexity** is \( O(n!) \), where \( n \) is the number of queens.
 
   **2.2. `isSafe` Function**
   - The `isSafe` function is called for each attempted placement.
