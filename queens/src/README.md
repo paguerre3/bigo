@@ -10,7 +10,7 @@
 
   **2.1. Recursive Backtracking (`solve`)**
   - For each column, the algorithm attempts all possible rows.
-    - The algorithm recursively places a queen in a valid position and backtracks if needed.
+    - The algorithm recursively places a queen in a valid position and backtracks if needed (undoing all previous queen placements and moving into next row of the starting column if needed, in case all possibilities were exhausted).
     - In the worst case, there are \( n! \) permutations to check for \( n \)-queens.
     - The **time complexity** is \( O(n!) \), where \( n \) is the number of queens.
 
