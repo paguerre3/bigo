@@ -2,6 +2,8 @@ import java.util.*;
 
 class QueensSolution1 {
     public static void mqueens(int m) {
+        long startTime = System.nanoTime();
+
         List<List<Integer>> solutions = new ArrayList<>();
         solve(m, new ArrayList<>(), solutions);
 
@@ -20,6 +22,9 @@ class QueensSolution1 {
             }
             System.out.println(); // Ensure a newline after all solutions are printed
         }
+
+        long endTime = System.nanoTime(); // End timing
+        System.out.println("Execution time: " + (endTime - startTime) / 1_000_000 + " ms");
     }
 
     private static void solve(int m, List<Integer> current, List<List<Integer>> solutions) {

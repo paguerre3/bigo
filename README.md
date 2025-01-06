@@ -232,3 +232,7 @@ It's important to note that fully automated determination of an algorithm's time
    
    O(n + 500 + n^3 + n^2) = O(n^3) // cubic
    ``` 
+
+
+---
+[mQUEENS SOLUTION AND OPTIMIZATION USING BIG O](./queens/src/README.md)
