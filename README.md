@@ -244,6 +244,8 @@ It's important to note that fully automated determination of an algorithm's time
 
 Here's a brief table summarizing the OWASP Top 10 issues along with descriptions and solutions:
 
+Here’s an updated version of the table with **Rate Limiting**, **DoS Attacks**, and **CORS** added:
+
 | **#** | **Issue**                              | **Description**                                                                                     | **Solution & Sample**                                                                                                                                                                                                 |
 |-------|----------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1     | **Broken Access Control**             | Unauthorized users accessing sensitive data or actions.                                             | Implement strict role-based access controls (RBAC).<br>**Sample**: `if (user.role != 'admin') { denyAccess() }`                                                                                                      |
@@ -256,8 +258,8 @@ Here's a brief table summarizing the OWASP Top 10 issues along with descriptions
 | 8     | **Software and Data Integrity Failures** | Untrusted data used in critical processes or components.                                              | Validate all inputs and ensure code integrity with signing.<br>**Sample**: `if (!isValidData(input)) { throw new InvalidInputException() }`                                                                            |
 | 9     | **Security Logging and Monitoring Failures** | Failure to log and monitor events, preventing breach detection.                                      | Implement logging of security events and real-time monitoring.<br>**Sample**: `log.info("User login attempt from IP: {}", ip)`                                                                                      |
 | 10    | **Server-Side Request Forgery (SSRF)**  | Exploiting server to make requests to internal resources.                                            | Validate and sanitize URLs, disable internal network access.<br>**Sample**: `if (!isValidURL(url)) { throw new InvalidURLException() }`                                                                               |
-
-
+| 11    | **Rate Limiting and DoS Protection**   | Protects against Denial of Service (DoS) and excessive requests by limiting the rate of incoming traffic. | Implement rate limiting to block excessive requests from a single source.<br>**Sample**: In Express.js: `app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }))`                                                   |
+| 12    | **Cross-Origin Resource Sharing (CORS) Misconfigurations** | Insecure CORS settings allowing unauthorized access to resources from other domains.                | Restrict CORS to trusted origins only.<br>**Sample**: In Node.js: `app.use(cors({ origin: ['https://trustedwebsite.com'] }))`                                                                                         |
 
 ---
 
