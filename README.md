@@ -274,3 +274,71 @@ Here’s an updated version of the table with **Rate Limiting**, **DoS Attacks**
 | **5. Verification**     | Test the software for security vulnerabilities.                                                      | - Perform static and dynamic analysis<br>- Conduct penetration testing<br>- Validate against security requirements         |
 | **6. Release**          | Prepare for deployment, ensuring security measures are in place for production.                       | - Perform final security checks (e.g., code review, dependency check)<br>- Set up monitoring and logging for production    |
 | **7. Response**         | Address security incidents and respond to vulnerabilities post-release.                               | - Monitor for breaches or security events<br>- Apply patches and updates as needed<br>- Perform incident response actions   |
+
+
+
+---
+
+# Functional Operations Summary
+
+Functional programming often introduces more abstraction layers, which **may negatively impact performance**, especially in high-performance scenarios.
+**Since functional operations can involve chaining, debugging becomes more complex**. Stack traces can become difficult to understand, particularly when lambdas are used.
+
+While immutability is a core concept in functional programming, ensuring immutability in Java requires a different mindset, often leading to more boilerplate code or excessive use of final modifiers.
+
+Here's a more comprehensive table of common stream operations in Java, with their descriptions and corresponding sample code. The **operation type** has been placed at the end for clarity.
+
+| **Operation**         | **Description**                                             | **Sample Code** | **Operation Type** |
+|-----------------------|-------------------------------------------------------------|-----------------|---------------------|
+| `stream()`            | Converts a collection or other data structure into a stream for processing. | `list.stream()`  | Source              |
+| `map()`               | Transforms each element of the stream by applying a function. | `stream.map(x -> x * 2)` | Intermediate         |
+| `filter()`            | Filters elements based on a provided predicate.            | `stream.filter(x -> x > 10)` | Intermediate         |
+| `peek()`              | Allows viewing of elements without modifying them.         | `stream.peek(System.out::println)` | Intermediate         |
+| `flatMap()`           | Flattens nested streams into a single stream.              | `stream.flatMap(List::stream)` | Intermediate         |
+| `distinct()`          | Returns a stream with unique elements (eliminates duplicates). | `stream.distinct()` | Intermediate         |
+| `sorted()`            | Sorts the elements in the stream.                          | `stream.sorted()` | Intermediate         |
+| `limit()`             | Limits the number of elements in the stream.               | `stream.limit(5)` | Intermediate         |
+| `skip()`              | Skips the first `n` elements of the stream.                | `stream.skip(5)` | Intermediate         |
+| `mapToInt()`          | Converts the stream of objects to an `IntStream`.           | `stream.mapToInt(String::length)` | Intermediate         |
+| `mapToDouble()`       | Converts the stream of objects to a `DoubleStream`.         | `stream.mapToDouble(String::length)` | Intermediate         |
+| `mapToLong()`         | Converts the stream of objects to a `LongStream`.           | `stream.mapToLong(String::length)` | Intermediate         |
+| `reduce()`            | Combines the elements of the stream into a single result.  | `stream.reduce(0, Integer::sum)` | Terminal             |
+| `collect()`           | Collects the stream elements into a collection (e.g., List, Set). | `stream.collect(Collectors.toList())` | Terminal             |
+| `forEach()`           | Performs an action for each element of the stream.         | `stream.forEach(System.out::println)` | Terminal             |
+| `toArray()`           | Converts the stream into an array.                          | `stream.toArray()` | Terminal             |
+| `count()`             | Counts the number of elements in the stream.               | `stream.count()` | Terminal             |
+| `anyMatch()`          | Returns `true` if any element matches the provided predicate. | `stream.anyMatch(x -> x > 10)` | Terminal             |
+| `allMatch()`          | Returns `true` if all elements match the provided predicate. | `stream.allMatch(x -> x > 10)` | Terminal             |
+| `noneMatch()`         | Returns `true` if no elements match the provided predicate. | `stream.noneMatch(x -> x > 10)` | Terminal             |
+| `findFirst()`         | Returns the first element of the stream, if present.       | `stream.findFirst()` | Terminal             |
+| `findAny()`           | Returns any element of the stream, if present.             | `stream.findAny()` | Terminal             |
+| `min()`               | Returns the minimum element in the stream based on a comparator. | `stream.min(Comparator.naturalOrder())` | Terminal             |
+| `max()`               | Returns the maximum element in the stream based on a comparator. | `stream.max(Comparator.naturalOrder())` | Terminal             |
+| `join()`              | Joins the elements of a stream into a single string.       | `String.join(", ", stream)` | Terminal             |
+| `anyMatch()`          | Returns `true` if any element matches the given predicate. | `stream.anyMatch(x -> x > 10)` | Terminal             |
+| `findAny()`           | Returns any element from the stream.                       | `stream.findAny()` | Terminal             |
+| `toList()`            | Collects stream elements into a `List`.                     | `stream.collect(Collectors.toList())` | Terminal             |
+| `toSet()`             | Collects stream elements into a `Set`.                      | `stream.collect(Collectors.toSet())` | Terminal             |
+
+***Explanation of Some Operations:***
+
+- **`peek()`**: This intermediate operation allows for inspecting the elements as they pass through the pipeline without modifying the stream.
+  ```java
+  stream.peek(System.out::println);
+  ```
+
+- **`reduce()`**: This terminal operation combines elements in a stream using an associative accumulation function. It's often used for aggregating values such as summing elements or combining them.
+  ```java
+  int sum = stream.reduce(0, Integer::sum);
+  ```
+
+- **`flatMap()`**: This intermediate operation is useful for dealing with nested collections or structures. It "flattens" the stream by mapping each element to a new stream and concatenating those results into a single stream.
+  ```java
+  stream.flatMap(List::stream);
+  ```
+
+- **`collect()`**: A terminal operation used to collect the results of a stream into a collection or other container. It's one of the most frequently used terminal operations.
+  ```java
+  List<Integer> collected = stream.collect(Collectors.toList());
+  ```
+
