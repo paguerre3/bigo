@@ -236,3 +236,23 @@ It's important to note that fully automated determination of an algorithm's time
 
 ---
 [mQUEENS SOLUTION AND OPTIMIZATION USING BIG O](./queens/src/README.md)
+
+
+
+---
+# OWASP TOP 10
+
+Here's a brief table summarizing the OWASP Top 10 issues along with descriptions and solutions:
+
+| **#** | **Issue**                              | **Description**                                                                                     | **Solution & Sample**                                                                                                                                                                                                 |
+|-------|----------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1     | **Broken Access Control**             | Unauthorized users accessing sensitive data or actions.                                             | Implement strict role-based access controls (RBAC).<br>**Sample**: `if (user.role != 'admin') { denyAccess() }`                                                                                                      |
+| 2     | **Cryptographic Failures**            | Inadequate encryption or key management.                                                             | Use strong encryption (AES-256).<br>**Sample**: `String encrypted = encryptAES(data, key)`                                                                                                                           |
+| 3     | **Injection**                          | Malicious data injected into SQL, NoSQL, etc.                                                        | Use parameterized queries to prevent SQL injection.<br>**Sample**: `SELECT * FROM users WHERE username = ? AND password = ?`                                                                                      |
+| 4     | **Insecure Design**                   | Flaws in the design phase that lead to vulnerabilities.                                               | Incorporate threat modeling and security controls in design.<br>**Sample**: Design APIs with strict input validation and authentication.                                                                            |
+| 5     | **Security Misconfiguration**         | Default or incomplete configurations expose the system to attacks.                                   | Disable unnecessary features, services, and ports.<br>**Sample**: `http.response.headers.remove('Server')`                                                                                                          |
+| 6     | **Vulnerable and Outdated Components** | Use of outdated libraries or frameworks with known vulnerabilities.                                  | Regularly update libraries and components.<br>**Sample**: Use `npm audit` or `mvn versions:display-dependency-updates` to identify vulnerable packages.                                                             |
+| 7     | **Identification and Authentication Failures** | Weak or improper authentication leading to unauthorized access.                                     | Implement multi-factor authentication (MFA) and strong password policies.<br>**Sample**: `require MFA for sensitive operations`                                                                                      |
+| 8     | **Software and Data Integrity Failures** | Untrusted data used in critical processes or components.                                              | Validate all inputs and ensure code integrity with signing.<br>**Sample**: `if (!isValidData(input)) { throw new InvalidInputException() }`                                                                            |
+| 9     | **Security Logging and Monitoring Failures** | Failure to log and monitor events, preventing breach detection.                                      | Implement logging of security events and real-time monitoring.<br>**Sample**: `log.info("User login attempt from IP: {}", ip)`                                                                                      |
+| 10    | **Server-Side Request Forgery (SSRF)**  | Exploiting server to make requests to internal resources.                                            | Validate and sanitize URLs, disable internal network access.<br>**Sample**: `if (!isValidURL(url)) { throw new InvalidURLException() }`                                                                               |
