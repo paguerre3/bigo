@@ -256,3 +256,19 @@ Here's a brief table summarizing the OWASP Top 10 issues along with descriptions
 | 8     | **Software and Data Integrity Failures** | Untrusted data used in critical processes or components.                                              | Validate all inputs and ensure code integrity with signing.<br>**Sample**: `if (!isValidData(input)) { throw new InvalidInputException() }`                                                                            |
 | 9     | **Security Logging and Monitoring Failures** | Failure to log and monitor events, preventing breach detection.                                      | Implement logging of security events and real-time monitoring.<br>**Sample**: `log.info("User login attempt from IP: {}", ip)`                                                                                      |
 | 10    | **Server-Side Request Forgery (SSRF)**  | Exploiting server to make requests to internal resources.                                            | Validate and sanitize URLs, disable internal network access.<br>**Sample**: `if (!isValidURL(url)) { throw new InvalidURLException() }`                                                                               |
+
+
+
+---
+
+# **Secure Development Lifecycle (SDL)**:
+
+| **Stage**              | **Description**                                                                                       | **Steps**                                                                                                                  |
+|------------------------|-------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| **1. Training**         | Educate developers and stakeholders on security best practices.                                       | - Provide security training<br>- Awareness of security risks like OWASP Top 10                                           |
+| **2. Requirements**     | Define security requirements and objectives for the project.                                          | - Identify security needs based on business requirements<br>- Define access controls and encryption requirements            |
+| **3. Design**           | Incorporate security into the software architecture and design.                                       | - Perform threat modeling<br>- Design secure APIs<br>- Apply secure coding practices                                      |
+| **4. Implementation**   | Implement the code with security features integrated.                                                 | - Use secure coding techniques (e.g., input validation)<br>- Employ cryptographic standards (e.g., AES)                   |
+| **5. Verification**     | Test the software for security vulnerabilities.                                                      | - Perform static and dynamic analysis<br>- Conduct penetration testing<br>- Validate against security requirements         |
+| **6. Release**          | Prepare for deployment, ensuring security measures are in place for production.                       | - Perform final security checks (e.g., code review, dependency check)<br>- Set up monitoring and logging for production    |
+| **7. Response**         | Address security incidents and respond to vulnerabilities post-release.                               | - Monitor for breaches or security events<br>- Apply patches and updates as needed<br>- Perform incident response actions   |
